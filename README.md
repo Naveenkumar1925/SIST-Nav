@@ -49,28 +49,7 @@
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                        CLIENT                           │
-│                                                         │
-│  index.html ──► userInput ──► user (map) ──► security   │
-│                    │               │              │      │
-│               Registration    Navigation      Tracking   │
-│               + Validation    + Dijkstra    Dashboard    │
-└──────────────────────┬──────────────┬───────────────────┘
-                       │  REST API    │  WebSocket
-                       ▼              ▼
-┌─────────────────────────────────────────────────────────┐
-│                        SERVER                           │
-│                                                         │
-│   Express.js  ──►  userRouter  ──►  userController      │
-│                                         │               │
-│   Socket.io  ◄──── updateLocation       │               │
-│       │             locationUpdate      ▼               │
-│       └──────────────────────────►  MongoDB             │
-│                                    (User Model)         │
-└─────────────────────────────────────────────────────────┘
-```
+![Architecture](arch.png)
 
 ---
 
